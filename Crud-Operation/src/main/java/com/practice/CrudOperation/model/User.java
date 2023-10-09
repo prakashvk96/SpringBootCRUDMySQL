@@ -31,5 +31,9 @@ public class User {
     @Column(nullable = false)
     private LocalDate dob;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
+    Address address;
+
 
 }
